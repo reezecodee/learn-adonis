@@ -1,0 +1,27 @@
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl">E-Perpustakaan</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <a
+          href="{{ route('books.index') }}"
+          class="{{ request.url().startsWith('/perpustakaan/cms/books') ? 'active' : '' }}"
+        >Buku</a>
+      </li>
+      <li>
+        <a href="{{ route('admin.index') }}" class="{{ request.url().startsWith('/perpustakaan/cms/admin') ? 'active' : '' }}">Admin</a>
+      </li>
+      <li>
+        <a href="{{ route('students.index') }}" class="{{ request.url().startsWith('/perpustakaan/cms/students') ? 'active' : '' }}">Siswa</a>
+      </li>
+      <li>
+        <a href="{{ route('categories.index') }}" class="{{ request.url().startsWith('/perpustakaan/cms/categories') ? 'active' : '' }}">Kategori</a>
+      </li>
+      <li>
+        <a href="">Peminjaman</a>
+      </li>
+    </ul>
+  </div>
+</div>

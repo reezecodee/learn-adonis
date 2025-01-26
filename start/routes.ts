@@ -9,9 +9,13 @@
 
 import router from '@adonisjs/core/services/router'
 
+// belajar studi kasus dengan aplikasi perpustakaan
+import './library_routes.ts'
+
+
 //   gunakan perintah node ace list:routes untuk melihat daftar route
 
-router.on('/').render('pages/home')
+router.on('/docs').render('pages/home')
 
 // basic routing
 router

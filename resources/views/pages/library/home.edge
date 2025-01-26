@@ -1,0 +1,18 @@
+@layouts.auth()
+  <div>
+    <h2 class="text-4xl font-bold">
+      Selamat datang di E-Perpustakaan
+    </h2>
+    <p class="font-medium text-center mb-4">
+      Pilih login dengan metode session atau token
+    </p>
+    <div class="flex justify-center gap-3">
+      <a href="{{ route('auth.login') }}?metode=session">
+        <button class="btn btn-primary">Dengan Session</button>
+      </a>
+      <a href="{{ route('auth.register') }}?metode=token">
+        <button class="btn btn-success">Dengan Token</button>
+      </a>
+    </div>
+  </div>
+@end

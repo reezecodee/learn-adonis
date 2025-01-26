@@ -1,0 +1,32 @@
+@layouts.auth()
+  <div class="card bg-white text-base-100 w-full max-w-lg shadow-xl">
+    <form action="{{ route('auth.handleLogin') }}" method="post">
+      {{ csrfField() }}
+      <div class="card-body">
+        <h2 class="card-title">
+          Login dengan {{ metode }}
+        </h2>
+        <div class="text-white mb-2">
+          <label class="form-control w-full">
+            <div class="label">
+              <span class="label-text text-base-100">Masukkan email</span>
+            </div>
+            <input type="text" name="email" placeholder="Email" class="input input-bordered w-full" />
+          </label>
+          <label class="form-control w-full">
+            <div class="label">
+              <span class="label-text text-base-100">Masukkan password</span>
+            </div>
+            <input type="password" name="password" placeholder="Password" class="input input-bordered w-full" />
+          </label>
+        </div>
+        <div class="card-actions justify-end">
+          <a href="{{ route('home') }}">
+            <button class="btn btn-error">Kembali</button>
+          </a>
+          <button class="btn btn-primary">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+@end
