@@ -88,7 +88,27 @@ router.group(() => {
 
 
 // using controller
-import TestingsController from '#controllers/Routing/testings_controller'
+// - import tradisional tidak direkomendasikan untuk hmr (Hot Module Replacement)
+// import TestingsController from '#controllers/Routing/testings_controller'
+
+// selalu gunakan
+const TestingsController = () => import('#controllers/Routing/testings_controller')
+const BasicsController = () => import('#controllers/LearnController/basics_controller')
+const SingleActionsController = () => import('#controllers/LearnController/single_actions_controller')
+const ContextsController = () => import('#controllers/LearnController/HTTPContext/contexts_controller')
 
 router.get('testing-controller', [TestingsController, 'index'])
 router.get('testing-controller/:id', [TestingsController, 'getParam']).where('id', router.matchers.number())
+
+
+// manual method controller
+router.get('manual-method', [BasicsController, 'index'])
+
+// single action controller
+router.get('single-action', [SingleActionsController])
+
+// controller with http context
+router.get('response-view', [ContextsController, 'renderView'])
+router.post('req-res', [ContextsController, 'reqRes'])
+
+
